@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shurtz By Notsa | Youth Streetwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="brand">SHURTZ BY NOTSA</div>
+        <div class="age-tag">AGES 7 — 17 ONLY</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>NOT FOR <br>GROWN UPS.</h1>
+            <p>Premium streetwear built for the next generation.</p>
+        </div>
+    </header>
+
+    <section class="drop-container">
+        <div class="section-header">
+            <h2>LATEST DROP</h2>
+            <p>High-quality fabrics. Action-ready cuts.</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">New</div>
+                <img src="shirt-1.jpg" alt="Shurtz by Notsa Tee">
+                <div class="product-info">
+                    <h3>The 'Apex' Heavyweight Tee</h3>
+                    <p>$35.00</p>
+                    <select id="size-1">
+                        <option>Select Size (Y-Small 7-8)</option>
+                        <option>Select Size (Y-Medium 10-12)</option>
+                        <option>Select Size (Y-Large 14-16)</option>
+                        <option>Select Size (Teen 17+)</option>
+                    </select>
+                    <button onclick="buy('Apex Tee')">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="shirt-2.jpg" alt="Shurtz by Notsa Hoodie">
+                <div class="product-info">
+                    <h3>Grit Series Hoodie</h3>
+                    <p>$55.00</p>
+                    <select id="size-2">
+                        <option>Select Size (Y-Small 7-8)</option>
+                        <option>Select Size (Y-Medium 10-12)</option>
+                        <option>Select Size (Y-Large 14-16)</option>
+                        <option>Select Size (Teen 17+)</option>
+                    </select>
+                    <button onclick="buy('Grit Hoodie')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SHURTZ BY NOTSA &copy; 2026</p>
+        <div class="socials">IG // TT // TW</div>
+    </footer>
+
+    <script>
+        function buy(itemName) {
+            alert(itemName + " has been added. Moving to secure checkout...");
+        }
+    </script>
+</body>
+</html>
