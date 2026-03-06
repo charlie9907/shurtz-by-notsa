@@ -3,72 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shurtz By Notsa | Youth Streetwear</title>
+    <title>Shurtz By Notsa | Streetwear 7-17</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="brand">SHURTZ BY NOTSA</div>
-        <div class="age-tag">AGES 7 — 17 ONLY</div>
+        <div class="brand">Shurtz By Notsa</div>
+        <div class="nav-right">
+            <span class="tag">EST. 2026</span>
+            <button onclick="toggleModal()" class="size-btn">Size Guide</button>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-text">
-            <h1>NOT FOR <br>GROWN UPS.</h1>
-            <p>Premium streetwear built for the next generation.</p>
+        <div class="hero-content">
+            <h1>BUILT FOR <br><span class="highlight">THE YOUTH.</span></h1>
+            <p>Premium essentials for boys aged 7—17. Engineered for the grind.</p>
+            <a href="#shop" class="scroll-link">View Drop ↓</a>
         </div>
     </header>
 
-    <section class="drop-container">
+    <section id="shop" class="container">
         <div class="section-header">
-            <h2>LATEST DROP</h2>
-            <p>High-quality fabrics. Action-ready cuts.</p>
+            <h2>Current Drop</h2>
+            <div class="line"></div>
         </div>
 
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="badge">New</div>
-                <img src="shirt-1.jpg" alt="Shurtz by Notsa Tee">
-                <div class="product-info">
-                    <h3>The 'Apex' Heavyweight Tee</h3>
-                    <p>$35.00</p>
+        <div class="grid">
+            <div class="card">
+                <div class="img-box">
+                    <img src="shirt-1.jpg" alt="Black Heavyweight Tee">
+                    <div class="badge">Limited</div>
+                </div>
+                <div class="details">
+                    <h3>'Notsa' Core Heavyweight</h3>
+                    <p class="price">$38.00</p>
                     <select id="size-1">
-                        <option>Select Size (Y-Small 7-8)</option>
-                        <option>Select Size (Y-Medium 10-12)</option>
-                        <option>Select Size (Y-Large 14-16)</option>
-                        <option>Select Size (Teen 17+)</option>
+                        <option disabled selected>Select Size</option>
+                        <option>Y-Small (7-9)</option>
+                        <option>Y-Medium (10-12)</option>
+                        <option>Y-Large (13-15)</option>
+                        <option>Teen (16-17)</option>
                     </select>
-                    <button onclick="buy('Apex Tee')">Add to Cart</button>
+                    <button class="buy-btn" onclick="order('Core Heavyweight', 'size-1')">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="product-card">
-                <img src="shirt-2.jpg" alt="Shurtz by Notsa Hoodie">
-                <div class="product-info">
-                    <h3>Grit Series Hoodie</h3>
-                    <p>$55.00</p>
+            <div class="card">
+                <div class="img-box">
+                    <img src="shirt-2.jpg" alt="White Graphic Tee">
+                </div>
+                <div class="details">
+                    <h3>'Vandal' Series Tee</h3>
+                    <p class="price">$42.00</p>
                     <select id="size-2">
-                        <option>Select Size (Y-Small 7-8)</option>
-                        <option>Select Size (Y-Medium 10-12)</option>
-                        <option>Select Size (Y-Large 14-16)</option>
-                        <option>Select Size (Teen 17+)</option>
+                        <option disabled selected>Select Size</option>
+                        <option>Y-Small (7-9)</option>
+                        <option>Y-Medium (10-12)</option>
+                        <option>Y-Large (13-15)</option>
+                        <option>Teen (16-17)</option>
                     </select>
-                    <button onclick="buy('Grit Hoodie')">Add to Cart</button>
+                    <button class="buy-btn" onclick="order('Vandal Tee', 'size-2')">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <div id="sizeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal()">&times;</span>
+            <h2>SIZE CHART</h2>
+            <p>Fits: True to size / Slightly Oversized</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Age</th>
+                        <th>Chest (in)</th>
+                        <th>Length (in)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Y-Small</td><td>7-9</td><td>17"</td><td>22"</td></tr>
+                    <tr><td>Y-Medium</td><td>10-12</td><td>18"</td><td>24"</td></tr>
+                    <tr><td>Y-Large</td><td>13-15</td><td>19"</td><td>26"</td></tr>
+                    <tr><td>Teen</td><td>16-17</td><td>20.5"</td><td>28"</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <footer>
-        <p>SHURTZ BY NOTSA &copy; 2026</p>
-        <div class="socials">IG // TT // TW</div>
+        <p>&copy; 2026 SHURTZ BY NOTSA | BOYS ONLY</p>
     </footer>
 
     <script>
-        function buy(itemName) {
-            alert(itemName + " has been added. Moving to secure checkout...");
+        function toggleModal() {
+            const m = document.getElementById('sizeModal');
+            m.style.display = (m.style.display === "flex") ? "none" : "flex";
+        }
+
+        function order(name, id) {
+            const size = document.getElementById(id).value;
+            if(size === "Select Size") return alert("Please select a size first!");
+            alert(`Order Initialized: ${name} [Size: ${size}]`);
         }
     </script>
 </body>
